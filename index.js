@@ -108,12 +108,6 @@ const response = await axios.post(`https://api.telegram.org/bot${token}/setWebho
     fastify.log.error('Error setting webhook:', error.message);
   }
 });
-bot.getMe().then((botInfo) => {
-  bot.me = botInfo;
-  console.log(`🤖 Bot ishga tushdi: @${bot.me.username}`);
-}).catch((err) => {
-  console.error("Bot ma'lumotini olishda xatolik:", err.message);
-});
 
 bot.use(session({ initial: () => ({ state: null, tempData: {} }) }));
 
