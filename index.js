@@ -1,4 +1,7 @@
 require('dotenv').config();
+const axios = require('axios');
+const Fastify = require('fastify');
+const fastify = Fastify({ logger: true });
 const { Bot, session } = require('grammy');
 const mongoose = require('mongoose');
 
