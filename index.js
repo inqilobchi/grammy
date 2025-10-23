@@ -62,8 +62,7 @@ async function updateUserData(userId, data) {
 }
 
 
-const token = process.env.BOT_TOKEN;
-const bot = new TelegramBot(token, { webHook: true });
+const bot = new Bot(process.env.BOT_TOKEN);
 
 const WEBHOOK_PATH = `/webhook/${token}`;
 const FULL_WEBHOOK_URL = `${process.env.PUBLIC_URL}${WEBHOOK_PATH}`;
