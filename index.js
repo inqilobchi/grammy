@@ -61,8 +61,8 @@ async function updateUserData(userId, data) {
   await User.findOneAndUpdate({ userId }, data, { upsert: true });
 }
 
-
-const bot = new Bot(process.env.BOT_TOKEN);
+const token = process.env.BOT_TOKEN;
+const bot = new Bot(token);
 
 const WEBHOOK_PATH = `/webhook/${token}`;
 const FULL_WEBHOOK_URL = `${process.env.PUBLIC_URL}${WEBHOOK_PATH}`;
